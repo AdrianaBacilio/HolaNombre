@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo</title>
+    <link rel="stylesheet" href="/pages/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Space+Grotesk:wght@300..700&display=swap"rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="saludoInicial">¡Hola Nombre!</div>
+    <button id="botonCambiarNombre"> ¡Cambia el nombre! </button>
+    <script src="/pages/script.js"></script> <!-- Agrega el archivo JavaScript -->
+
+    <script> //Seccion del documento que contiene scriptsJavaScript
+
+        var saludos = {
+            francés: "Bonjour",
+            español: "Hola",
+            inglés: "Hello",
+            alemán: "Hallo",
+            italiano: "Ciao",
+            japonés: "Kon'nichiwa",
+            coreano: "Annyeonghaseyo"
+        };
+
+        var idiomas = Object.keys(saludos); // Obtener una lista de los idiomas disponibles
+        var currentIndex = 0; // Índice actual del idioma
+
+        function cambiaNombre() {
+            var nuevoNombre = prompt("¿Cuál es tu nombre?");
+
+            if (nuevoNombre) {
+                mostrarSaludos(nuevoNombre); // Llama a la función para mostrar saludos
+            }
+        }
+
+        function mostrarSaludos(nombre) {
+            // Limpia el contenido anterior
+            document.getElementById("saludoInicial").innerText = "";
+
+            // Función recursiva para mostrar los saludos en diferentes idiomas
+            function mostrarSiguienteSaludo(index) {
+                if (index < idiomas.length) {
+                    var idiomaActual = idiomas[index];
+                    var saludo = saludos[idiomaActual];
+                    // Muestra el saludo en el idioma actual con el nombre ingresado
+                    document.getElementById("saludoInicial").innerText = saludo + " " + nombre + "";
+
+                    // Pausa durante 1 segundo antes de mostrar el siguiente saludo
+                    setTimeout(function () {
+                        mostrarSiguienteSaludo(index + 1);
+                    }, 1000);
+                }
+            }
+
+            // Inicia la secuencia de saludos con el primer idioma
+            mostrarSiguienteSaludo(0);
+        }
+
+        document.getElementById("botonCambiarNombre").addEventListener("click", cambiaNombre)
+    </script>
+</body>
+
+</html>

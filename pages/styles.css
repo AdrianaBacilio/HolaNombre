@@ -1,0 +1,29 @@
+body {
+    font-family: "Honk", system-ui; 
+    text-align: center;
+    margin-top: 50px;
+}
+
+#saludoInicial {
+    font-size: 180px;
+    margin-bottom: 20px;
+    transition: color 0.5s ease; /* Transición de color al cambiar el saludo */
+}
+
+#botonCambiarNombre {
+    font-family: "Honk", system-ui; 
+    background-color: red; /* Fondo rojo para el botón */
+    color: white; /* Texto blanco para el botón */
+    border: black;
+    padding: 10px 20px;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar el botón */
+    transition: background-color 0.3s ease; /* Transición para el color de fondo del botón */
+}
+
+#botonCambiarNombre:hover {
+    background-color: #ff5555; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+}
+
