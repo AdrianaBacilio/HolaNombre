@@ -12,7 +12,7 @@ body {
 
 #botonCambiarNombre {
     font-family: "Honk", system-ui; 
-    background-color: red; /* Fondo rojo para el botón */
+    background-color: rgb(255, 0, 0); /* Fondo rojo para el botón */
     color: white; /* Texto blanco para el botón */
     border: black;
     padding: 10px 20px;
